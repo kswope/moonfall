@@ -1,0 +1,39 @@
+#!/usr/bin/env moonfall
+
+flcl = {
+   float = "left",
+   clear = "left"
+}
+
+gothic = { 
+   color = "red", 
+   background_color = "black",
+}
+
+scheme = { 
+   dummy1 = gothic,
+   dummy2 = flcl,
+}
+
+
+colwidth = fill{
+   total = 800,
+   left = 50,
+   center = 600,
+   right = false,
+}	 
+
+
+indent_css = ""
+step = 10
+for i= 1,10 do
+   indent_css = indent_css .. 
+      string.format("#indent%s { margin-left: %spx; }\n", i, i*step)
+end
+
+
+walk = {
+   var1 = "value1",
+   var2 = "value2",
+}
+

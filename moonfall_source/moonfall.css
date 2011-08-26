@@ -1,0 +1,28 @@
+left_column { 
+              width: [colwidth.left];
+              [flcl]
+              }
+
+
+center_column { 
+                [flcl]
+                width: [colwidth.center];
+                }               
+
+
+right_column { 
+               [flcl]
+               width: [colwidth.right];
+               }
+
+#listing td span .error { 
+                          [gothic]
+                          }
+
+
+[indent_css]
+hello!!!!!!!!!
+[test.one]
+[testtne]
+[test.three]
+

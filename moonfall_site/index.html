@@ -1,0 +1,495 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+    <head>
+
+	<title>Moonfall: CSS with variables</title>
+
+	<link rel="stylesheet" type="text/css" href="moonfall.cgi" />
+
+    </head>
+
+    <body id="site_container">
+
+	<div id="top_container">
+
+	    <div id="logo">
+		<img src="images/logo.png" alt="logo" />
+	    </div>
+
+	    <div id="pushdown">
+
+	    </div>
+
+	    <div id="spacer">
+
+	    </div>
+
+	    <div id="example">
+		<a href="#example_source">example</a>
+	    </div>
+
+	    <div id="contact">
+		<a href="#contact_address">contact</a>
+	    </div>
+
+	    <div id="list">
+		<a href="#mailing_list">list</a>
+	    </div>
+
+	    <div id="download">
+		<a href="#download_link">download</a>
+	    </div>
+	    
+	    &nbsp; 
+
+	</div>
+
+	<p class="question">
+	    What is Moonfall?
+	</p>
+
+	<p class="answer">
+	    A program to generate CSS, either dynamically as a cgi
+	    script, or run from the command line.<br /><br />
+
+	    Used in its simplest way- you get variables in css.<br /><br />
+
+	    Used in its most advanced way- you can write a
+	    powerful Lua script to create and modify CSS.
+
+	</p>
+
+	<p class="question">
+	    Running Moonfall
+	</p>
+	
+	<p class="answer">
+	    <img src="images/running.png" alt="running"/>
+	</p>
+
+	<p class="question">
+	    Simplest example
+	</p>
+	
+	<p class="answer">
+	    <img src="images/simplest.png" alt="simplest"/>
+	</p>
+
+	<p class="question">
+	    Simple example
+	</p>
+	
+	<p class="answer">
+	    <img src="images/table.png" alt="simple"/>
+	</p>
+
+	<p class="question">
+	    Example using built in <q>fill</q> function
+	</p>
+	
+	<p class="answer">
+	    <img src="images/fill.png" alt="fill"/>
+	</p>
+
+	<p class="question">
+	    I have to learn yet another programming language?!?!
+	</p>
+	
+	<p class="answer">
+	    You will need to know very little programming to
+	    accomplish much with Moonfall.  If you could make sense of
+	    the above examples you are half way to Moonfall mastery.
+	</p>
+
+	<p class="question">
+	    What is Lua?
+	</p>
+
+	<p class="answer">
+	    <a
+	    href="http://en.wikipedia.org/wiki/Lua_%28programming_language%29">Lua</a>
+	    is a programming language that is frequently used in
+	    computer games.  It's used in
+	    <a href="http://worldofwarcraft.com/index.xml">World of Warcraft</a>.
+	    It's also used in <a href="http://www.adobe.com/products/photoshoplightroom/">Adobe Lightroom</a>.
+	</p>
+
+	<p class="question">
+	    Why Lua?
+	</p>
+
+	<p class="answer">
+	    Why write a computer language when you can borrow one?
+	    Lua is designed to be embedded in other programs.  It's also
+	    easy to use and looks almost familiar to web programmers.
+	</p>
+
+	<p class="question">
+	    How does Lua relate to Moonfall?
+	</p>
+
+	<p class="answer">
+	    Lua is built into Moonfall.  Moonfall handles tasks like
+	    reading in the css template file, doing substitutions,
+	    converting Lua data into css and outputting the css.  Lua
+	    handles the hard stuff like figuring out what you want
+	    Moonfall to do.  Lua is Moonfall's brain.  As smart as Lua
+	    is, it doesn't know what css is or what to do with it,
+	    that is why it needs Moonfall.
+	</p>
+
+	<p class="question">
+	    All it does is text substitutions in a css file, why doesn't Moonfall
+	    generate all the css?
+	</p>
+
+	<p class="answer">
+	    At first I tried to write a language that generated CSS.
+	    I quickly came to realize that CSS is very good at
+	    describing itself and no programming syntax comes close.
+	    Try inventing a language syntax thats better at describing
+	    this:<br /><br />#container div #nav span a:hover {
+	    color:red }<br /><br /> So I decided to have the markup do
+	    what its best at and the programming language do what its
+	    best at, and figure out a way to combine them in a user
+	    friendly way.
+	</p>
+
+	<p class="question">
+	    How do I run Moonfall?
+	</p>
+
+	<p class="answer">
+	    As cgi script or a command line script to generate a
+	    static css file, as shown in the first example.
+	</p>
+
+	<p class="question">
+	    What files are involved.
+	</p>
+
+	<p class="answer">
+	    You need Moonfall installed (or just downloaded and
+	    sitting someplace where it can be found), a script to run
+	    it and tell it what to do, and a css template file.
+	</p>
+
+	<p class="question">
+	    Do I need to name those files moonfall.cgi and moonfall.css?
+	</p>
+
+	<p class="answer">
+	    Nope.  If you run Moonfall as a cgi script, then just put
+	    the correct name in the html tag that references the css.
+	    To rename the css template file (moonfall.css is the default),
+	    change the top line of your Moonfall script to look like
+	    this: <br /><br /> #!/usr/bin/env css=/path/to/css/file
+	    moonfall
+	</p>
+
+	<p class="question">
+	    What's with the name?  Sounds like a druid talent from
+	    World of Warcraft.
+	</p>
+
+	<p class="answer">
+	    <q>Lua</q> means moon in Portuguese (Lua is from
+	    Brazil).  <q>Fall</q> comes from cascading styles sheets.
+	    Yes I know it's a ridiculous name for software.
+	</p>
+
+	<p class="question">
+	    Do I have to run it as a cgi script?
+	</p>
+
+	<p class="answer">
+	    No, you can run it to generate a static css file.  But it's
+	    easier for development to run it dynamically so it updates
+	    the css automatically.  This is shown in the first example.
+	</p>
+
+        <p class="question">
+            How about Moonfall's performance?
+        </p>
+
+        <p class="answer">
+            Lua is a fast, and Moonfall is coded in c, so it's a pretty
+            fast combination.  You might never have a performance
+            problem running it as a cgi script.  For faster cgi
+            performance you can tell Moonfall to cache the output in a
+            file like this:<br /><br /> #!/usr/bin/env
+            cache=/tmp/moonfall.cache moonfall <br /> <br /> If that is
+            still not fast enough just use Moonfall from the command
+            line and redirect the output into a file.  Be sure to use
+            the -http switch to suppress the headers.  For
+            example:<br /><br /> prompt> ./moonfall.cgi -http >
+static.css
+</p>
+
+<p class="question">
+    What if I don't have permission to install Moonfall?
+</p>
+
+<p class="answer">
+    Put the Moonfall binary someplace the web server has
+    permission to run it.  The same directory as your
+    moonfall.cgi script is fine.  Then at the top of your
+    script put the full path to Moonfall.<br /><br />
+    #!/usr/bin/env /path/to/moonfall
+</p>
+
+<p class="question">
+    How do I debug my Moonfall script?
+</p>
+
+<p class="answer">
+    You can run it from the command line.  If the css output
+    is distracting you can suppress it with -css.
+    Keep in mind that you can debug it just like a regular script,
+    in other words, with lots of print()'s :)
+</p>
+
+<p class="question">
+    How does the data from Lua get into the css?
+</p>
+
+<p class="answer">
+    Any global variable in the Lua script will be substituted
+    into the css in the corresponding tag.  In other words,
+    if the global variable in the Moonfall script is MyVar = "blue",
+    it will be substituted at the tag [MyVar] as blue.<br />
+    <br />  
+    Strings are unaltered, like "1.2em", but numbers are appended
+    with "px".  So MyVar=1 would result in "1px".
+</p>
+
+<p class="question">
+    Then what about Lua tables?
+</p>
+
+<p class="answer">
+    A Lua table looks like this (notice the underscore in background_color!):<br />
+    <br />
+    goth_theme = {<br />
+    &nbsp; &nbsp; color = "red",<br />
+    &nbsp; &nbsp; background_color = "black",<br />
+    }<br />
+    <br />
+    This will be placed into the css as<br /><br />
+    color: red;<br />
+    background-color: black;<br />
+    <br />
+    You can nest tables using dummy keys, just make sure
+    you don't reuse the same key in the same table or they
+    will overwrite.<br />
+    <br />
+    float_attrs = {<br /> 
+    &nbsp; &nbsp; float = "left",<br />
+    &nbsp; &nbsp; clear = "both",<br /> }<br /> 
+    <br />
+    all_attrs = {<br /> 
+    &nbsp; &nbsp; dummy1 = goth_theme,<br /> 
+    &nbsp; &nbsp; dummy2 = float_attrs,<br /> 
+    }<br /> 
+    <br /> 
+    Moonfall will flatten nested tables, so from [all_attrs] you'll 
+    get:<br />
+    <br />
+    color: red;<br />
+    background-color: black;<br />
+    float: left;<br />
+    clear: both;<br />
+    <br />
+    Moonfall should take care of all the indenting so the output
+    looks good.  It will also figure out if you wanted the attributes
+    all on one line or each on it's own line, for example:<br />
+    <br />
+    #content {<br />
+    &nbsp; &nbsp; [all_attrs]<br />
+    }<br />
+    <br />
+    will output as<br />
+    <br />
+    #content {<br />
+    &nbsp; &nbsp; color: red;<br />
+    &nbsp; &nbsp; background-color: black;<br />
+    &nbsp; &nbsp; float: left;<br />
+    &nbsp; &nbsp; clear: both;<br />
+    }<br />
+    <br />
+    but:<br />
+    <br />
+    #content { [all_attrs] }<br />
+    <br />
+    Will output as
+    #content {
+    color: red;
+    background-color: black;
+    float: left;
+    clear: both;
+    }<br />
+
+
+</p>
+
+<p class="question">
+    What's the <q>fill</q> function?
+</p>
+
+<p class="answer">
+    So far it's the only Lua function provided by Moonfall.<br />
+    <br />
+
+    You provide it with a total value, and a number of other keys,
+    setting the unknowns to <q>false</q>, and it will figure out the
+    unknown values and return it as a table.  You can use this
+    function, or a chain of these, to have the dimensions of your web
+    design automatically rescale based off a few values. For
+    example:<br />
+
+    <br />
+    page_width = 800<br /><br />
+
+    widths = fill {<br />
+    &nbsp; &nbsp; total = page_width,<br />
+    &nbsp; &nbsp; left = false,<br />
+    &nbsp; &nbsp; center = 600,<br />
+    &nbsp; &nbsp; right = false.<br />
+    }<br />
+    <br />
+    The results will be:<br /><br />
+    widths.left is 100<br />
+    widths.center is 600<br />	    
+    widths.right is 100<br />
+    <br />
+
+    If you change <q>total</q> to 1000 the new values would be:<br /><br />
+    widths.left is 200<br />
+    widths.center is 600<br />	    
+    widths.right is 200<br />
+    <br />
+
+    If you gave left a value of 100 rather than <q>false</q> you'd get:<br /><br />
+    widths.left is 100<br />
+    widths.center is 600<br />	    
+    widths.right is 300<br />
+    <br />
+
+    Keep in mind that these results can be parameters for
+    another <q>fill</q> function, and so on:<br /><br />
+
+    center_widths = fill {<br />
+    &nbsp; &nbsp; total = widths.center,<br />
+    &nbsp; &nbsp; left = false,<br />
+    &nbsp; &nbsp; center = false,<br />
+    &nbsp; &nbsp; right = false.<br />
+    }<br />
+    <br />
+    So all together you'll have:<br /><br />
+    widths.left is 100<br />
+    widths.center is 600<br />	    
+    widths.right is 300<br />
+    center_widths.left is 200<br />
+    center_widths.center is 200<br />	    
+    center_widths.right is 200<br />
+
+    
+
+
+</p>
+
+<p class="question">
+    <a name="example_source">Example code</a>
+</p>
+
+<p class="answer">
+    Here is the live code for this page:
+    <a href="script.txt">Moonfall script</a>,
+    <a href="styles.txt">Moonfall css</a>
+</p>
+
+<p class="question">
+    <a name="contact_address">Contact</a>
+</p>
+
+<p class="answer">
+    <img src="images/contact.png" alt="contact address"/>
+</p>
+
+<p class="question">
+    <a name="mailing_list">Mailing list</a>
+</p>
+
+<p class="answer">
+    Go <a
+    href="http://www.mail-archive.com/moonfall@lists.moonfall.org">here</a>
+    for search and threads.<br />
+    Go <a
+    href="http://lists.moonfall.org/listinfo.cgi/moonfall-moonfall.org">here</a>
+    to subscribe, for archive, and another search.
+</p>
+
+<p class="question">
+    <a name="download_link">Download</a>
+</p>
+
+<p class="answer">
+    <a href="downloads/latest_moonfall.tar.gz">Latest source</a><br />
+    <a href="downloads/moonfall_linux.tar.gz">Linux binary (Intel)</a><br />
+    <a href="downloads/moonfall_osx.tar.gz">OS X binary (Intel)</a><br />
+    <a href="downloads/moonfall.zip">Windows binary</a>
+</p>
+
+<p class="question">
+    <a name="install">INSTALL</a>
+</p>
+
+<div class="answer">
+
+    For binaries just uncompress and move to where you can run it, for source
+    follow these instructions.
+
+    <ol class="instructions">
+
+	<li>Download Lua <a href="http://www.lua.org/ftp/lua-5.1.2.tar.gz">source</a> from <a href="http://www.lua.org/download.html">this page</a></li>
+	<li><em>tar xvfz lua-5.1.2.tar.gz</em></li>
+	<li>Download Moonfall <a href="downloads/latest_moonfall.tar.gz">latest source</a></li>
+	<li><em>mv latest_moonfall.tar.gz lua-5.1.2</em></li>
+	<li><em>cd lua-5.1.2</em></li>
+	<li><em>tar xvfz latest_moonfall.tar.gz</em></li>
+	<li><em>cd moonfall_source</em></li>
+	<li><em>make lua</em></li>
+	<li><em>make</em></li>
+	<li>Put the resulting <q>moonfall</q> binary wherever you need it.  If you have
+	    root access consider installing it into /usr/local/bin, or
+	    maybe /usr/bin so you only have to start your Moonfall
+	    scripts with <strong>#!/usr/bin/env moonfall</strong>, but
+	    if you don't have permission for that just move it
+	    anywhere you can run it, but start your scripts with<br />
+	    <strong>#!/usr/bin/env /anywhere/you/can/run/it/moonfall</strong>
+	</li>
+    </ol>
+
+</div>
+
+
+<p class="question">
+    What license?
+</p>
+
+<p class="answer">
+    GNU General Public License 3 , or (at your option) any later
+    version.  If this is a <q>real</q> problem contact me, but don't ask
+    me legal questions because you'll get what you payed for.
+</p>
+
+
+<div id="bottom_space"></div>
+
+</body>
+
+</html>

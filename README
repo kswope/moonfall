@@ -1,0 +1,8 @@
+For now, please see http://moonfall.org for docs
+
+Included here is last version of Lua that was embedded, haven't tried
+any newer versions yet.
+
+Also included is the moonfall.org site which uses moonfall for its css
+generation, with it running as a cgi script, however, this is
+optional, but easier for development.
